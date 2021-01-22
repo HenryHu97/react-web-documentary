@@ -1,0 +1,173 @@
+.page-container {
+  display: block;
+  position: relative;
+  height: 100%;
+  padding-left: 260px;
+  transition: padding .25s linear;
+  >aside {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 260px;
+      height: 100%;
+      background-color: #001529;
+      transition: width .25s linear;
+      z-index: 9;
+  }
+  >article {
+    display: block;
+    position: relative;
+    height: 100%;
+    z-index: 8;
+    >header {
+      height: 48px;
+      box-shadow: 0 0 10px #ddd;
+      background-color: #fff;
+      padding: 8px 12px;
+      &::after {
+        content: "";
+        width: 0;
+        height: 0;
+        clear: both;
+      }
+    }
+    >article {
+      height: calc(~"100% - 48px");
+      padding: 12px;
+    }
+  }
+  
+}   
+
+.collapse {
+  padding-left: 80px;
+  >aside {
+      width: 80px;
+  }
+}
+
+// 侧边栏菜单样式
+.page-layout-menu {
+  >.title {
+    position: relative;
+    height: 48px;
+    color: #fff;
+    line-height: 48px;
+    font-size: 1.1rem;
+    padding-left: 80px;
+    border-bottom: 1px solid #fff;
+    word-wrap: none;
+    white-space: nowrap;
+    overflow: hidden;
+    &::before {
+      content: '';
+      display: block;
+      position: absolute;
+      width: 80px;
+      height: 48px;
+      top: 0;
+      left: 0;
+      background: url(../images/common/logo.png) center center / 32px 32px no-repeat;
+    }
+  }
+  >.content {
+    height: 100%;
+    overflow-x: hidden;
+  }
+}
+
+.page-layout-position {
+  line-height: 32px;
+  font-size: .7rem;
+  margin-left: 12px;
+}
+
+.page-layout-user-drop {
+  width: 150px;
+  padding: 20px 0;
+  margin-top: 10px;
+  background-color: #fff;
+  box-shadow: 0 0 10px #ddd;
+  >span {
+      display: block;
+      height: 32px;
+      line-height: 32px;
+      font-size: .7rem;
+      color: #999;
+      text-indent: 12px;
+      cursor: pointer;
+      user-select: none;
+      &:hover {
+          background-color: #eee;
+      }
+  }
+}
+.ant-dropdown-link {
+  float: right;
+}
+
+
+// 用户页面样式
+.page-layout-container {
+  display: block;
+  position: relative;
+  background-color: #fff;
+  height: 100%;
+  >header,
+  >footer
+  {
+    padding: 8px 12px;
+    height: 49px;
+    border-bottom: 1px solid #ddd;
+  }
+  >header {
+    text-align: right;
+    >.ant-input {
+      width: 210px;
+      margin-right: 20px;
+    }
+    >.ant-btn {
+      margin-left: 10px;
+    }
+  }
+  >article {
+    padding: 8px 12px;
+    height: calc(~"100% - 90px");
+    .editBtn {
+      color: #14bd00;
+      padding: 0 4px;
+      cursor: pointer;
+      &.delete {color: red;}
+    }
+  }
+  >footer {
+    height: 41px;
+    padding: 4px 12px;
+    border-top: 1px solid #ddd;
+    >.ant-pagination {
+      text-align: right;
+    }
+  }
+  &.full > article {
+    height: calc(~"100% - 41px");
+  }
+}
+
+
+
+.modal-fixed-height {
+  height: calc(~"100% - 160px");
+  .ant-modal-content {
+      height: 100%;
+  }
+  .ant-modal-body {
+      height: calc(~"100% - 107px");
+      padding: 0;
+  }
+  &.full {
+      .ant-modal-body {
+          height: calc(~"100% - 52px");
+      }
+  }
+}
